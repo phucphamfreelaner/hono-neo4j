@@ -5,3 +5,8 @@ declare interface Env {
   USER: string;
   PASSWORD: string;
 }
+
+interface INeo4jClient {
+  readQuery: (query: string, params?: any) => Promise<[any, Error | null]>;
+  writeResult: (query: string, params?: any) => Promise<[any, Error | null]>;
+}
